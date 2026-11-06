@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root { color-scheme: light; font-family: 'DM Sans', system-ui, sans-serif; color: #172b4d; background: #f5f9ff; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 15% 0%, #e8f1ff 0, transparent 48%), radial-gradient(ellipse at 100% 80%, #eef5ff 0, transparent 45%); }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.todo-app { width: min(100% - 40px, 660px); margin: 0 auto; padding: 85px 0 32px; }
+.app-header { margin-bottom: 35px; }
+.eyebrow { display: flex; align-items: center; gap: 9px; color: #2563eb; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+.eyebrow span { font-size: 27px; }
+h1 { font-family: 'Manrope', system-ui, sans-serif; font-size: clamp(36px, 7vw, 52px); letter-spacing: -2px; line-height: 1.2; margin: 17px 0 14px; font-weight: 800; }
+h1 span { color: #2563eb; }
+.app-header p { color: #61718a; font-size: 15px; line-height: 1.6; margin: 0; }
+.task-panel { background: #ffffff; border: 1px solid #dfe8f5; border-radius: 22px; padding: 30px; box-shadow: 0 16px 50px #1e40af0d; }
+label[for="todo-input"] { display: block; font-size: 13px; font-weight: 700; margin-bottom: 12px; }
+.input-row { display: flex; gap: 10px; }
+input[type="text"] { width: 100%; min-width: 0; padding: 15px 16px; border: 1px solid #d5e0f0; border-radius: 10px; background: #f8faff; color: #172b4d; font-size: 16px; }
+input::placeholder { color: #687b96; }
+.add-button { flex-shrink: 0; border: none; border-radius: 10px; padding: 0 20px; background: #2563eb; color: white; font-size: 13px; font-weight: 700; transition: background .2s; }
+.add-button span { font-size: 20px; vertical-align: -1px; margin-right: 5px; font-weight: 400; }
+.add-button:hover { background: #1d4ed8; }
+:focus-visible { outline: 3px solid #93b4ff; outline-offset: 3px; }
+.list-header { display: flex; justify-content: space-between; align-items: center; margin-top: 34px; padding-bottom: 16px; border-bottom: 1px solid #e8eef7; }
+h2 { font-size: 14px; margin: 0; }
+#task-count { font-size: 11px; background: #eff6ff; color: #1d4ed8; border-radius: 20px; padding: 6px 10px; }
+ul { list-style: none; margin: 0; padding: 0; }
+.todo-item { display: flex; align-items: center; gap: 12px; padding: 17px 0; border-bottom: 1px solid #e8eef7; }
+.todo-item input { accent-color: #2563eb; width: 19px; height: 19px; flex-shrink: 0; cursor: pointer; margin: 0; }
+.todo-item label { flex: 1; min-width: 0; font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; cursor: pointer; }
+.todo-item.completed label { color: #74849c; text-decoration: line-through; }
+.delete-button { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border: 0; border-radius: 8px; color: #64748b; background: transparent; }
+.delete-button:hover { background: #eff6ff; color: #1d4ed8; }
+.delete-button svg { width: 17px; height: 17px; }
+.empty-state { text-align: center; padding: 42px 0 46px; }
+.empty-icon { display: inline-grid; place-items: center; width: 49px; height: 49px; border: 1px solid #dbeafe; border-radius: 16px; color: #2563eb; background: #eff6ff; font-size: 23px; transform: rotate(-7deg); }
+h3 { margin: 18px 0 8px; font-size: 15px; font-weight: 600; }
+.empty-state p { color: #64748b; font-size: 13px; line-height: 1.6; margin: 0; }
+.panel-footer { border-top: 1px solid #e8eef7; padding-top: 18px; display: flex; gap: 12px; justify-content: space-between; align-items: center; color: #64748b; font-size: 11px; }
+#clear-completed { border: 0; background: none; color: #2563eb; font-size: 11px; padding: 6px 0; }
+#clear-completed:hover { text-decoration: underline; }
+.page-footer { text-align: center; color: #64748b; font-size: 11px; margin: 26px 0 0; letter-spacing: .3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+[hidden] { display: none !important; }
+button, input[type="text"], .todo-item, .todo-item label {
+  transition: background-color 180ms ease, border-color 180ms ease,
+    color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+input[type="text"] { min-height: 50px; font-size: 16px; }
+input[type="text"]:focus { background: #fff; border-color: #2563eb; box-shadow: 0 0 0 4px #2563eb12; }
+.add-button { min-height: 48px; box-shadow: 0 4px 10px #2563eb20; }
+.add-button:active { transform: translateY(0); box-shadow: none; }
+.todo-item { padding-left: 8px; padding-right: 8px; border-radius: 8px; }
+.todo-item label { padding: 8px 0; }
+.delete-button { width: 44px; height: 44px; border-radius: 10px; }
+.panel-footer { flex-wrap: wrap; }
+#clear-completed { min-height: 44px; padding: 8px 10px; border-radius: 8px; }
+#clear-completed:hover { background: #eff6ff; }
+@media (hover: hover) {
+  .add-button:hover { transform: translateY(-1px); box-shadow: 0 6px 16px #2563eb30; }
+  .add-button:active { transform: translateY(0); }
+  input[type="text"]:hover { border-color: #93b4ff; }
+  .todo-item:hover { background: #f8faff; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+@media (max-width: 480px) { .todo-app { width: calc(100% - 32px); padding-top: 44px; } .task-panel { padding: 22px 18px; border-radius: 18px; } .input-row { flex-direction: column; } .add-button { padding: 12px 18px; } .app-header p { font-size: 14px; } }

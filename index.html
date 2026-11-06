@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>My Todo App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="todo-app">
+    <header class="app-header">
+      <span class="eyebrow"><span aria-hidden="true">✳</span> A LITTLE FOCUS, EVERY DAY</span>
+      <h1>My Todo App<span aria-hidden="true">.</span></h1>
+      <p>Make room for what matters. One task at a time.</p>
+    </header>
+
+    <section class="task-panel" aria-labelledby="tasks-heading">
+      <form id="todo-form">
+        <label for="todo-input">What’s on your list?</label>
+        <div class="input-row">
+          <input id="todo-input" name="todo" type="text" placeholder="e.g. Take a walk outside" maxlength="300" required autocomplete="off">
+          <button class="add-button" type="submit"><span aria-hidden="true">+</span> Add task</button>
+        </div>
+      </form>
+
+      <div class="list-header">
+        <h2 id="tasks-heading">Your tasks</h2>
+        <span id="task-count">0 remaining</span>
+      </div>
+      <ul id="todo-list" aria-label="Todo list"></ul>
+      <div id="empty-state" class="empty-state">
+        <span class="empty-icon" aria-hidden="true">✓</span>
+        <h3>A fresh start.</h3>
+        <p>Add your first task and make a little progress.</p>
+      </div>
+      <footer class="panel-footer">
+        <span id="progress">Small steps. Good things.</span>
+        <button id="clear-completed" type="button" hidden>Clear completed</button>
+      </footer>
+    </section>
+    <p class="page-footer">Less overwhelm. More getting things done.</p>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
